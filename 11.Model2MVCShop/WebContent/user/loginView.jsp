@@ -73,7 +73,7 @@
 	<!-- ToolBar Start /////////////////////////////////////-->
 	<div class="navbar  navbar-default">
         <div class="container">
-        	<a class="navbar-brand" href="/index.jsp">Model2 MVC Shop</a>
+        	<a class="navbar-brand" href="/index.jsp">Daniel Shop</a>
    		</div>
    	</div>
    	<!-- ToolBar End /////////////////////////////////////-->	
@@ -84,27 +84,27 @@
 		<div class="row">
 		
 			<div class="col-md-6">
-					<img src="/images/logo-spring.png" class="img-rounded" width="100%" />
+				<img src="/images/cropped-1920-1080-693903.jpg" class="img-rounded" width="150%" />
 			</div>
 	   	 	
 	 	 	<div class="col-md-6">
 	 	 	
-		 	 	<br/><br/>
+		 	 	<br/><br/><br/>
 				
 				<div class="jumbotron">	 	 	
-		 	 		<h1 class="text-center">로 &nbsp;&nbsp;그 &nbsp;&nbsp;인</h1>
+		 	 		<h1 class="text-center">L&nbsp;O&nbsp;G&nbsp;I&nbsp;N&nbsp;</h1>
 
 			        <form class="form-horizontal">
 		  
 					  <div class="form-group">
-					    <label for="userId" class="col-sm-4 control-label">아 이 디</label>
+					    <label for="userId" class="col-sm-4 control-label">I&nbsp;D</label>
 					    <div class="col-sm-6">
 					      <input type="text" class="form-control" name="userId" id="userId"  placeholder="아이디" >
 					    </div>
 					  </div>
 					  
 					  <div class="form-group">
-					    <label for="password" class="col-sm-4 control-label">패 스 워 드</label>
+					    <label for="password" class="col-sm-4 control-label">PASSWORD</label>
 					    <div class="col-sm-6">
 					      <input type="password" class="form-control" name="password" id="password" placeholder="패스워드" >
 					    </div>
