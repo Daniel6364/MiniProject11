@@ -29,7 +29,17 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
 	
 	<!--  ///////////////////////// CSS ////////////////////////// -->
-	<style></style>
+	<style>
+	
+	body {
+		background-image: url(http://www.stylexstyle.com/sites/default/files/IMG_3063_0.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		 }
+	.jumbotron { margin: 200px;}
+	
+	</style>
    	
    	<!--  ///////////////////////// JavaScript ////////////////////////// -->
 	<script type="text/javascript">
