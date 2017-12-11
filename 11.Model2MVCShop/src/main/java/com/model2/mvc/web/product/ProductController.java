@@ -292,6 +292,7 @@ public class ProductController {
 				Model model ) throws Exception{
 		
 		System.out.println("/product/listProduct : GET / POST");
+		System.out.println("menu°ª È®ÀÎ : "+ menu);
 		
 		if(search.getCurrentPage() ==0 ){
 			search.setCurrentPage(1);

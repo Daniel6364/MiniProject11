@@ -37,7 +37,7 @@
 		background-repeat: no-repeat;
 		background-position: center;
 		 }
-	.jumbotron { margin: 200px;}
+	.jumbotron { padding: 50px;}
 	
 	</style>
    	
