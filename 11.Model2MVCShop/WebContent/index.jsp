@@ -37,7 +37,9 @@
 		background-repeat: no-repeat;
 		background-position: center;
 		 }
-	.jumbotron { padding: 50px;}
+	.row { 
+		margin-top: 100px;
+		}
 	
 	</style>
    	
@@ -101,6 +103,25 @@
 		<!-- 다단레이아웃  Start /////////////////////////////////////-->
 		<div class="row">
 	
+		<!--  Main start /////////////////////////////////////-->   		
+	 	 	<div class="col-md-9">
+				<div class="jumbotron">
+			  		<h1>Model2 MVC Shop</h1>
+			  		<p>로그인 후 사용가능...</p>
+			  		<p>로그인 전 검색만 가능합니다.</p>
+			  		<p>회원가입 하세요.</p>
+			  		
+			  		<div class="text-center">
+			  			<a class="btn btn-info btn-lg" href="#" role="button">회원가입</a>
+			  			<a class="btn btn-info btn-lg" href="#" role="button">로 그 인</a>
+			  		</div>
+			  	
+			  	</div>
+	        </div>
+	 	<!--  Main end /////////////////////////////////////-->   		
+	
+	
+	
 			<!--  Menu 구성 Start /////////////////////////////////////-->     	
 			<div class="col-md-3">
 		        
@@ -154,23 +175,6 @@
 			</div>
 			<!--  Menu 구성 end /////////////////////////////////////-->   
 
-	 	 	<!--  Main start /////////////////////////////////////-->   		
-	 	 	<div class="col-md-9">
-				<div class="jumbotron">
-			  		<h1>Model2 MVC Shop</h1>
-			  		<p>로그인 후 사용가능...</p>
-			  		<p>로그인 전 검색만 가능합니다.</p>
-			  		<p>회원가입 하세요.</p>
-			  		
-			  		<div class="text-center">
-			  			<a class="btn btn-info btn-lg" href="#" role="button">회원가입</a>
-			  			<a class="btn btn-info btn-lg" href="#" role="button">로 그 인</a>
-			  		</div>
-			  	
-			  	</div>
-	        </div>
-	   	 	<!--  Main end /////////////////////////////////////-->   		
-	 	 	
 		</div>
 		<!-- 다단레이아웃  end /////////////////////////////////////-->
 		

@@ -20,10 +20,12 @@
 	
 	<!--  ///////////////////////// CSS ////////////////////////// -->
 	<style>
-    	 body >  div.container{ 
+    	 body > div.container{ 
         	border: 3px solid #D6CDB7;
             margin-top: 10px;
+            border-radius: 8px;
         }
+        
     </style>
     
     <!--  ///////////////////////// JavaScript ////////////////////////// -->
@@ -73,7 +75,7 @@
 	<!-- ToolBar Start /////////////////////////////////////-->
 	<div class="navbar  navbar-default">
         <div class="container">
-        	<a class="navbar-brand" href="/index.jsp">Daniel Shop</a>
+        	<a class="navbar-brand" href="/index.jsp">Model2 MVC Shop</a>
    		</div>
    	</div>
    	<!-- ToolBar End /////////////////////////////////////-->	
@@ -83,13 +85,15 @@
 		<!--  row Start /////////////////////////////////////-->
 		<div class="row">
 		
+			<br/>
+			
 			<div class="col-md-6">
-				<img src="/images/cropped-1920-1080-693903.jpg" class="img-rounded" width="150%" />
+				<img src="/images/cropped-1920-1080-693903.jpg" class="img-rounded" width="100%" />
 			</div>
 	   	 	
 	 	 	<div class="col-md-6">
 	 	 	
-		 	 	<br/><br/><br/>
+		 	 	<br/>
 				
 				<div class="jumbotron">	 	 	
 		 	 		<h1 class="text-center">L&nbsp;O&nbsp;G&nbsp;I&nbsp;N&nbsp;</h1>
