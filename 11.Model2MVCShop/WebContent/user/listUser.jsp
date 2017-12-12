@@ -176,7 +176,7 @@
         <thead>
           <tr>
             <th align="center">No</th>
-            <th align="left" >회원 ID</th>
+            <th align="left">회원 ID</th>
             <th align="left">회원명</th>
             <th align="left">이메일</th>
             <th align="left">간략정보</th>

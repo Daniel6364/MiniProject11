@@ -21,8 +21,8 @@
 	<!--  ///////////////////////// CSS ////////////////////////// -->
 	<style>
     	 body >  div.container{ 
-        	border: 3px solid #D6CDB7;
-            margin-top: 10px;
+        	border: 13px solid #D6CDB7;
+            margin-top: 100px;
         }
     </style>
     

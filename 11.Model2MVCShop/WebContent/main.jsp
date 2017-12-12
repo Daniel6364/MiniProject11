@@ -48,7 +48,7 @@
    	<div class="container ">
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Model2MVCShop </h1>
+        <h1>Model2 MVC Shop</h1>
         <p>J2SE , DBMS ,JDBC , Servlet & JSP, Java Framework , HTML5 , UI Framework 학습 후 Mini-Project 진행</p>
      </div>
     </div>
