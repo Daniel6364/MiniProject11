@@ -91,7 +91,7 @@ $(function(){
 $(function(){
 	
 //	$( ".ct_list_pop td:nth-child(5)" ).bind("mouseenter" , function() {
-	$( "tbody td:nth-child(6) > i" ).bind("click" , function() {
+	$( "tbody td:nth-child(6)" ).bind("click" , function() {
 		
 		var proTranCode = $( $('input[name="proTranCode"]')[$( "tbody td:nth-child(6)" ).index(this)] ).val();
 		var prodNo = $( $('input[name="prodNo"]')[$( "tbody td:nth-child(6)" ).index(this)] ).val();
@@ -99,11 +99,8 @@ $(function(){
 		console.log(proTranCode)
 		console.log(prodNo)
 		
-//		if ( "${user.userId}" != 'admin' && "${user.userId}" != 'manager' ) { 
 			if (proTranCode == '' || proTranCode == null) {
 			
-			//	self.location ="/product/getProduct?prodNo=" + prodNo + "&menu=${ menu }";
-			var prodName = $(this).text().trim();
 				$.ajax (
 						{
 							url : "/product/json/getProduct/" + prodNo ,
@@ -114,7 +111,7 @@ $(function(){
 								"Content-Type" : "application/json"
 							},
 							success : function(JSONData , status) {
-								var displayValue = "<h3>"
+								var displayValue = "<h6>"
 													+"상 품 번 호  : " + JSONData.prodNo + "<br/>"
 													+"상 품 명 : " + JSONData.prodName + "<br/>"
 													+"상품이미지 : " + JSONData.fileName + "<br/>"
@@ -122,19 +119,17 @@ $(function(){
 													+"제 조 일 자 : " + JSONData.manuDate + "<br/>"
 													+"가 격 : " + JSONData.price + " 원 <br/>"
 													+"등 록 일 자 : " + JSONData.regDate + "<br/>"
-													+ "</h3>";
+													+ "</h6>";
 
-								$("h3").remove();
-								$("h1").remove();					
-								$( "#"+prodName+"" ).html(displayValue);
+								$("h4").remove();
+								$("h6").remove();					
+								$( "#"+prodNo+"" ).html(displayValue);
 							}
 					
 				}); // end of $.ajax
 				
-		//	} else if (proTranCode != null) {
-			} else {
+			} else if (proTranCode != null) {
 				
-			//	var prodName = $(this).text().trim();
 				$.ajax (
 						{
 							url : "/product/json/getProduct/" + prodNo ,
@@ -145,9 +140,9 @@ $(function(){
 								"Content-Type" : "application/json"
 							},
 							success : function(JSONData , status) {
-								var displayValue = '<h1><font color="red">' + "해당상품은 현재 구매하실 수 없습니다. [재고없음]" 
-													+ "</font></h1><br/>"
-													+ "<h3>"
+								var displayValue = '<h4><font color="red">' + "해당상품은 현재 구매하실 수 없습니다. [재고없음]" 
+													+ "</font></h4><br/>"
+													+ "<h6>"
 													+"상 품 번 호  : " + JSONData.prodNo + "<br/>"
 													+"상 품 명 : " + JSONData.prodName + "<br/>"
 													+"상품이미지 : " + JSONData.fileName + "<br/>"
@@ -155,16 +150,14 @@ $(function(){
 													+"제 조 일 자 : " + JSONData.manuDate + "<br/>"
 													+"가 격 : " + JSONData.price + " 원 <br/>"
 													+"등 록 일 자 : " + JSONData.regDate + "<br/>"
-													+ "</h3>";
+													+ "</h6>";
 													
-								$("h3").remove();
-								$("h1").remove();
-								$( "#"+prodName+"" ).html(displayValue);
+								$("h4").remove();
+								$("h6").remove();
+								$( "#"+prodNo+"" ).html(displayValue);
 							}
 				}); // end of $.ajax
 			}
-//		} 
-		
 	});
 		
 });
@@ -194,7 +187,6 @@ $(function(){
 	$( "tbody td:nth-child(5):contains('배송하기')" ).bind("click" , function() {
 		
 		var prodNo = $( $('input[name="prodNo"]')[$( "tbody td:nth-child(5)" ).index(this)] ).val();
-	//	self.location = "/purchase/updateTranCodeByProd?prodNo=" + prodNo + "&tranCode=1"
 			
 	$.ajax({
 						url : "/purchase/json/updateTranCodeByProd/" + prodNo + "/1",
@@ -335,10 +327,10 @@ $(function(){
 			  </td>
 			  
 			  <td align="left">
-			  	<i class="glyphicon glyphicon-ok" id="${ product.prodName }"></i>
+			  	<i class="glyphicon glyphicon-ok" id="${ product.prodNo }"></i>
+				<input type="hidden" value="${ product.prodNo }">			  
 				<input type="hidden" name="prodNo" value="${ product.prodNo }">
 				<input type="hidden" name="proTranCode" value="${ product.proTranCode }">			  
-				<input type="hidden" value="${ product.prodName }">			  
 			  </td>
 			  
 			</tr>
