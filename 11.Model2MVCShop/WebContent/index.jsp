@@ -40,6 +40,14 @@
 	.row { 
 		margin-top: 100px;
 		}
+	.jumbotron {
+	 	background-color: rgba( 240, 230, 140, 0.6 );
+        }
+    .jumbotron p {
+     	font-weight: bold;
+     	font-style: italic;
+     }   
+        
 	
 	</style>
    	

@@ -5,7 +5,10 @@
 
  
 <div class="container text-center">
-		 
+
+<!-- General Paging -->
+	<c:if test="${ search.searchPrice == null || search.searchPrice == '' }">
+
 		 <nav>
 		  <!-- 크기조절 :  pagination-lg pagination-sm-->
 		  <ul class="pagination" >
@@ -17,7 +20,7 @@
 			<c:if test="${ resultPage.currentPage > resultPage.pageUnit }">
 				<li>
 			</c:if>
-		      <a href="javascript:fncGetUserList('${ resultPage.currentPage-1}')" aria-label="Previous">
+		      <a href="javascript:fncGetList('${ resultPage.currentPage-1}')" aria-label="Previous">
 		        <span aria-hidden="true">&laquo;</span>
 		      </a>
 		    </li>
@@ -28,13 +31,13 @@
 				<c:if test="${ resultPage.currentPage == i }">
 					<!--  현재 page 가르킬경우 : active -->
 				    <li class="active">
-				    	<a href="javascript:fncGetUserList('${ i }');">${ i }<span class="sr-only">(current)</span></a>
+				    	<a href="javascript:fncGetList('${ i }');">${ i }<span class="sr-only">(current)</span></a>
 				    </li>
 				</c:if>	
 				
 				<c:if test="${ resultPage.currentPage != i}">	
 					<li>
-						<a href="javascript:fncGetUserList('${ i }');">${ i }</a>
+						<a href="javascript:fncGetList('${ i }');">${ i }</a>
 					</li>
 				</c:if>
 			</c:forEach>
@@ -46,14 +49,119 @@
 			<c:if test="${ resultPage.endUnitPage < resultPage.maxPage }">
 				<li>
 			</c:if>
-		      <a href="javascript:fncGetUserList('${resultPage.endUnitPage+1}')" aria-label="Next">
+		      <a href="javascript:fncGetList('${resultPage.endUnitPage+1}')" aria-label="Next">
 		        <span aria-hidden="true">&raquo;</span>
 		      </a>
 		    </li>
 		  </ul>
 		</nav>
-		
-</div>
+	</c:if>
+	
+<!-- lowPrice Paging -->
+	<c:if test="${ search.searchPrice != null && search.searchPrice == 'lowPrice' }">
+
+		 <nav>
+		  <!-- 크기조절 :  pagination-lg pagination-sm-->
+		  <ul class="pagination" >
+		    
+		    <!--  <<== 좌측 nav -->
+		  	<c:if test="${ resultPage.currentPage <= resultPage.pageUnit }">
+		 		<li class="disabled">
+			</c:if>
+			<c:if test="${ resultPage.currentPage > resultPage.pageUnit }">
+				<li>
+			</c:if>
+		      <a href="javascript:fncLowPrice('${ resultPage.currentPage-1}')" aria-label="Previous">
+		        <span aria-hidden="true">&laquo;</span>
+		      </a>
+		    </li>
+		    
+		    <!--  중앙  -->
+			<c:forEach var="i"  begin="${resultPage.beginUnitPage}" end="${resultPage.endUnitPage}" step="1">
+				
+				<c:if test="${ resultPage.currentPage == i }">
+					<!--  현재 page 가르킬경우 : active -->
+				    <li class="active">
+				    	<a href="javascript:fncLowPrice('${ i }');">${ i }<span class="sr-only">(current)</span></a>
+				    </li>
+				</c:if>	
+				
+				<c:if test="${ resultPage.currentPage != i}">	
+					<li>
+						<a href="javascript:fncLowPrice('${ i }');">${ i }</a>
+					</li>
+				</c:if>
+			</c:forEach>
+		    
+		     <!--  우측 nav==>> -->
+		     <c:if test="${ resultPage.endUnitPage >= resultPage.maxPage }">
+		  		<li class="disabled">
+			</c:if>
+			<c:if test="${ resultPage.endUnitPage < resultPage.maxPage }">
+				<li>
+			</c:if>
+		      <a href="javascript:fncLowPrice('${resultPage.endUnitPage+1}')" aria-label="Next">
+		        <span aria-hidden="true">&raquo;</span>
+		      </a>
+		    </li>
+		  </ul>
+		</nav>
+	</c:if>	
+	
+<!-- highPrice Paging -->
+	<c:if test="${ search.searchPrice != null && search.searchPrice == 'highPrice' }">
+
+		 <nav>
+		  <!-- 크기조절 :  pagination-lg pagination-sm-->
+		  <ul class="pagination" >
+		    
+		    <!--  <<== 좌측 nav -->
+		  	<c:if test="${ resultPage.currentPage <= resultPage.pageUnit }">
+		 		<li class="disabled">
+			</c:if>
+			<c:if test="${ resultPage.currentPage > resultPage.pageUnit }">
+				<li>
+			</c:if>
+		      <a href="javascript:fncHighPrice('${ resultPage.currentPage-1}')" aria-label="Previous">
+		        <span aria-hidden="true">&laquo;</span>
+		      </a>
+		    </li>
+		    
+		    <!--  중앙  -->
+			<c:forEach var="i"  begin="${resultPage.beginUnitPage}" end="${resultPage.endUnitPage}" step="1">
+				
+				<c:if test="${ resultPage.currentPage == i }">
+					<!--  현재 page 가르킬경우 : active -->
+				    <li class="active">
+				    	<a href="javascript:fncHighPrice('${ i }');">${ i }<span class="sr-only">(current)</span></a>
+				    </li>
+				</c:if>	
+				
+				<c:if test="${ resultPage.currentPage != i}">	
+					<li>
+						<a href="javascript:fncHighPrice('${ i }');">${ i }</a>
+					</li>
+				</c:if>
+			</c:forEach>
+		    
+		     <!--  우측 nav==>> -->
+		     <c:if test="${ resultPage.endUnitPage >= resultPage.maxPage }">
+		  		<li class="disabled">
+			</c:if>
+			<c:if test="${ resultPage.endUnitPage < resultPage.maxPage }">
+				<li>
+			</c:if>
+		      <a href="javascript:fncHighPrice('${resultPage.endUnitPage+1}')" aria-label="Next">
+		        <span aria-hidden="true">&raquo;</span>
+		      </a>
+		    </li>
+		  </ul>
+		</nav>
+	</c:if>		
+	
+	
+	
+</div> 
  
 
 

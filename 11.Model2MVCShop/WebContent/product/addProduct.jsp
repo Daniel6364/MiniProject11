@@ -52,7 +52,7 @@ $(function(){
 
 <body>
 	<!-- ToolBar Start /////////////////////////////////////-->
-	<jsp:include page="/layout/toolbar.jsp" />
+		<jsp:include page="/layout/toolbar.jsp" />
    	<!-- ToolBar End /////////////////////////////////////-->
 
 	<!--  화면구성 div Start /////////////////////////////////////-->
@@ -88,8 +88,8 @@ $(function(){
 		</div><hr/>
 		
 		<div class="row">
-		    <div class="col-md-12 text-center ">
-		      <button type="button" class="btn btn-primary"  >확&nbsp;인</button>
+		    <div class="col-md-12 text-center">
+		      <button type="button" class="btn btn-primary">확&nbsp;인</button>
 			  <a class="btn btn-primary btn" href="#" role="button">추가등록</a>
 		    </div>
 		  </div>
