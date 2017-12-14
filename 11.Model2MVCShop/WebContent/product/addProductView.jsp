@@ -96,9 +96,11 @@
    	<!--  화면구성 div Start /////////////////////////////////////-->
 	<div class="container">
 	
-		<h1 class="bg-primary text-center">판매상품등록</h1>
-		<h5 class="text-muted text-right">판매하실 상품을 <strong class="text-danger">형식에 맞게 </strong>등록해 주세요.</h5>
-		
+		<div class="page-header">
+			<h3 class="bg-primary text-center">판매상품등록</h3>
+			<h5 class="text-muted text-right">판매하실 상품을 <strong class="text-danger">형식에 맞게 </strong>등록해 주세요.</h5>
+		 </div>
+		 
 		<!-- form Start /////////////////////////////////////-->
 		<form class="form-horizontal">
 		
