@@ -294,18 +294,21 @@ public class ProductController {
 		System.out.println("/product/listProduct : GET / POST");
 		System.out.println("menu값 확인 : "+ menu);
 		
+		System.out.println(lowPriceCondition);
+		System.out.println(highPriceCondition);
+		
 		if(search.getCurrentPage() ==0 ){
 			search.setCurrentPage(1);
 		}
 		search.setPageSize(pageSize);
 		
-		// Price Searching
+		///* Price Searching
 		if (lowPriceCondition.equals("lowPrice")) {
 			search.setSearchPrice(lowPriceCondition);
 		} else if (highPriceCondition.equals("highPrice")) {
 			search.setSearchPrice(highPriceCondition);
 		}
-		
+		//*/
 		// Business logic 수행
 		Map<String , Object> map = productService.getProductList(search);
 		

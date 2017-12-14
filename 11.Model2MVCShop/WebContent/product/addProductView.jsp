@@ -81,7 +81,7 @@
 		}
 
 		$("form").attr("method", "POST").attr("action", "/product/addProduct")
-				.attr("enctype", "multipart/form-data").submit();
+			.attr("enctype", "multipart/form-data").submit();
 
 	}
 </script>
@@ -91,66 +91,71 @@
 <body>
 	<!-- ToolBar Start /////////////////////////////////////-->
 	<jsp:include page="/layout/toolbar.jsp" />
-   	<!-- ToolBar End /////////////////////////////////////-->
-   	
-   	<!--  화면구성 div Start /////////////////////////////////////-->
+	<!-- ToolBar End /////////////////////////////////////-->
+
+	<!--  화면구성 div Start /////////////////////////////////////-->
 	<div class="container">
-	
-		<h1 class="bg-primary text-center">판매상품등록</h1>
-		<h5 class="text-muted text-right">판매하실 상품을 <strong class="text-danger">형식에 맞게 </strong>등록해 주세요.</h5>
-		
+
+	<div class="page-header">
+		<h3 class="text-info">판매상품등록</h3>
+		<h5 class="text-muted text-left">
+			판매하실 상품을 <strong class="text-danger">형식에 맞게 </strong>등록해 주세요.
+		</h5>
+	</div>
+
 		<!-- form Start /////////////////////////////////////-->
 		<form class="form-horizontal">
-		
-		<div class="form-group">
-		    <label for="prodName" class="col-sm-offset-1 col-sm-3 control-label">상품명</label>
-		    <div class="col-sm-4">
-		      <input type="text" class="form-control" id="prodName" name="prodName" placeholder="필수입력">
-		    </div>
-	    </div>
-	    
-	    <div class="form-group">
-		    <label for="prodDetail" class="col-sm-offset-1 col-sm-3 control-label">상품상세정보</label>
-		    <div class="col-sm-4">
-		      <input type="text" class="form-control" id="prodDetail" name="prodDetail" placeholder="필수입력">
-		    </div>
-	    </div>
-	    
-	    <div class="form-group">
-		    <label for="manuDate" class="col-sm-offset-1 col-sm-3 control-label">상품제조일자</label>
-		    <div class="col-sm-4">
-		      <!-- <input type="text" id="datepicker"> -->
-		      <input type="text" class="form-control" id="manuDate" name="manuDate" placeholder="필수입력">
-		    </div>
-	    </div>
-	    
-	    <div class="form-group">
-		    <label for="price" class="col-sm-offset-1 col-sm-3 control-label">가격</label>
-		    <div class="col-sm-4">
-		      <input type="text" class="form-control" id="price" name="price" placeholder="필수입력">
-		    </div>
-	    </div>
-	    
-	    <div class="form-group">
-		    <label for="fileNames" class="col-sm-offset-1 col-sm-3 control-label">상품이미지</label>
-		    <div class="col-sm-4">
-		      <input type="file" class="form-control" id="fileNames" name="fileNames" >
-		    </div>
-	    </div>
-		
-		 <div class="form-group">
-		    <div class="col-sm-offset-4  col-sm-4 text-center">
-		      <button type="button" class="btn btn-primary"  >등&nbsp;록</button>
-			  <a class="btn btn-primary btn" href="#" role="button">취&nbsp;소</a>
-		    </div>
-		  </div>
-		  
-		  </form>
+
+			<div class="form-group">
+				<label for="prodName" class="col-sm-offset-1 col-sm-3 control-label">상품명</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" id="prodName" name="prodName" placeholder="필수입력">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="prodDetail"
+					class="col-sm-offset-1 col-sm-3 control-label">상품상세정보</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" id="prodDetail" name="prodDetail" placeholder="필수입력">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="manuDate" class="col-sm-offset-1 col-sm-3 control-label">상품제조일자</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" id="manuDate" name="manuDate" placeholder="필수입력">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="price" class="col-sm-offset-1 col-sm-3 control-label">가격</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" id="price" name="price" placeholder="필수입력">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="fileNames"
+					class="col-sm-offset-1 col-sm-3 control-label">상품이미지</label>
+				<div class="col-sm-4">
+					<input type="file" class="form-control" id="fileNames" name="fileNames">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-offset-4  col-sm-4 text-center">
+					<button type="button" class="btn btn-primary">등&nbsp;록</button>
+					<a class="btn btn-primary btn" href="#" role="button">취&nbsp;소</a>
+				</div>
+			</div>
+
+		</form>
 		<!-- form Start /////////////////////////////////////-->
-		
- 	</div>
+
+	</div>
 	<!--  화면구성 div end /////////////////////////////////////-->
-	
+
 </body>
 
 </html>
