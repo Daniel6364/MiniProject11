@@ -52,7 +52,7 @@
 	               <c:if test="${sessionScope.user.role == 'admin'}">
 		              <li class="dropdown">
 		                     <a  href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-		                         <span >판매상품관리</span>
+		                         <span >판매관리</span>
 		                         <span class="caret"></span>
 		                     </a>
 		                     <ul class="dropdown-menu">
@@ -99,6 +99,13 @@
    	
    	
    	<script type="text/javascript">
+   	
+  	//============= 최근본상품 history() Event  처리 =============
+   	function history(){
+		popWin = window.open("/history.jsp",
+													"popWin",
+													"left=300, top=200, width=300, height=200, marginwidth=0, marginheight=0, scrollbars=no, scrolling=no, menubar=no, resizable=no");
+	}   	
 	
 		//============= logout Event  처리 =============	
 		 $(function() {
@@ -122,6 +129,36 @@
 	 	$( "a:contains('개인정보조회')" ).on("click" , function() {
 	 		//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
 			$(self.location).attr("href","/user/getUser?userId=${sessionScope.user.userId}");
+		});
+		
+	 	//=============  판매상품등록 Event  처리 =============	
+	 	$( "a:contains('판매상품등록')" ).bind("click" , function() {
+	 		//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+			$(self.location).attr("href","/product/addProductView.jsp;");
+		});
+	 	
+	 	//=============   판매상품관리 Event  처리 =============	
+	 	$( "a:contains('판매상품관리')" ).bind("click" , function() {
+	 		//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+			$(self.location).attr("href","/product/listProduct?menu=manage");
+		});
+	 	
+	 	//=============   상 품 검 색 Event  처리 =============	
+	 	$( "a:contains('상 품 검 색')" ).bind("click" , function() {
+	 		//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+			$(self.location).attr("href","/product/listProduct?menu=search");
+		});
+	 	
+	 	//=============   구매이력조회 Event  처리 =============	
+	 	$( "a:contains('구매이력조회')" ).bind("click" , function() {
+	 		//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+			$(self.location).attr("href","/purchase/listPurchase");
+		});
+	 	
+	 	//=============   최근본상품 Event  처리 =============	
+	 	$( "a:contains('최근본상품')" ).bind("click" , function() {
+	 		//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+			history();
 		});
 		
 	</script>  
