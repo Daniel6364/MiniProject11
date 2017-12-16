@@ -53,7 +53,8 @@ public class Product {
 		return manuDate;
 	}
 	public void setManuDate(String manuDate) {
-		this.manuDate = manuDate.replace("/", "");
+//		this.manuDate = manuDate.replace("/", "");
+		this.manuDate = manuDate;
 	}
 	public int getPrice() {
 		return price;
