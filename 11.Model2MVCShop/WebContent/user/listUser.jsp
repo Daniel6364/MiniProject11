@@ -81,6 +81,7 @@
 			$(  "td:nth-child(5) > i" ).on("click" , function() {
 
 					var userId = $(this).next().val();
+					console.log(userId)
 				
 					$.ajax( 
 							{

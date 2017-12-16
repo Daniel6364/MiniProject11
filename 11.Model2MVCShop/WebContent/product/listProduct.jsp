@@ -41,6 +41,9 @@
 	  body {
             padding-top : 50px;
         }
+        pre {
+        	background-color: aqua;
+        }
     </style>
 
 <!--  ///////////////////////// JavaScript ////////////////////////// -->
@@ -91,15 +94,13 @@ $(function(){
 $(function(){
 	
 //	$( ".ct_list_pop td:nth-child(5)" ).bind("mouseenter" , function() {
-	$( "tbody td:nth-child(6)" ).bind("click" , function() {
-		
-		var proTranCode = $( $('input[name="proTranCode"]')[$( "tbody td:nth-child(6)" ).index(this)] ).val();
-		var prodNo = $( $('input[name="prodNo"]')[$( "tbody td:nth-child(6)" ).index(this)] ).val();
-		
-		console.log(proTranCode)
-		console.log(prodNo)
+	$( "td:nth-child(6) > i" ).bind("click" , function() {
+
+		var proTranCode = $( $('input[name="proTranCode"]')[$( "td:nth-child(6) > i" ).index(this)] ).val();
+		var prodNo = $( $('td:nth-child(6) input[name="prodNo"]')[$( "td:nth-child(6)  > i" ).index(this)] ).val();
 		
 			if (proTranCode == '' || proTranCode == null) {
+			var prodName = $(this).next().val().trim();
 			
 				$.ajax (
 						{
@@ -111,24 +112,27 @@ $(function(){
 								"Content-Type" : "application/json"
 							},
 							success : function(JSONData , status) {
-								var displayValue = "<h6>"
+								var displayValue = "<h5><pre>"
 													+"상 품 번 호  : " + JSONData.prodNo + "<br/>"
-													+"상 품 명 : " + JSONData.prodName + "<br/>"
-													+"상품이미지 : " + JSONData.fileName + "<br/>"
+													+"상  품  명 : " + JSONData.prodName + "<br/>"
+													+"상품 이미지 : " + JSONData.fileName + "<br/>"
 													+"상품상세정보 : " + JSONData.prodDetail + "<br/>"
 													+"제 조 일 자 : " + JSONData.manuDate + "<br/>"
-													+"가 격 : " + JSONData.price + " 원 <br/>"
+													+"가  격 : " + JSONData.price + " 원 <br/>"
 													+"등 록 일 자 : " + JSONData.regDate + "<br/>"
-													+ "</h6>";
+													+ "</pre></h5>";
 
 								$("h4").remove();
-								$("h6").remove();					
-								$( "#"+prodNo+"" ).html(displayValue);
+								$("h5").remove();					
+								$( "#"+prodName+"" ).html(displayValue);
 							}
 					
 				}); // end of $.ajax
 				
-			} else if (proTranCode != null) {
+			
+			} 
+			else if (proTranCode != null) {
+				var prodName = $(this).next().val().trim();
 				
 				$.ajax (
 						{
@@ -142,22 +146,23 @@ $(function(){
 							success : function(JSONData , status) {
 								var displayValue = '<h4><font color="red">' + "해당상품은 현재 구매하실 수 없습니다. [재고없음]" 
 													+ "</font></h4><br/>"
-													+ "<h6>"
-													+"상 품 번 호  : " + JSONData.prodNo + "<br/>"
-													+"상 품 명 : " + JSONData.prodName + "<br/>"
-													+"상품이미지 : " + JSONData.fileName + "<br/>"
+													+ "<h5><pre>"
+													+"상 품 번 호 : " + JSONData.prodNo + "<br/>"
+													+"상  품  명 : " + JSONData.prodName + "<br/>"
+													+"상품 이미지 : " + JSONData.fileName + "<br/>"
 													+"상품상세정보 : " + JSONData.prodDetail + "<br/>"
 													+"제 조 일 자 : " + JSONData.manuDate + "<br/>"
-													+"가 격 : " + JSONData.price + " 원 <br/>"
+													+"가  격 : " + JSONData.price + " 원 <br/>"
 													+"등 록 일 자 : " + JSONData.regDate + "<br/>"
-													+ "</h6>";
+													+ "</pre></h5>";
 													
 								$("h4").remove();
-								$("h6").remove();
-								$( "#"+prodNo+"" ).html(displayValue);
+								$("h5").remove();
+								$( "#"+prodName+"" ).html(displayValue);
 							}
 				}); // end of $.ajax
 			}
+		
 	});
 		
 });
@@ -326,11 +331,11 @@ $(function(){
 				</c:if>
 			  </td>
 			  
-			  <td align="left">
-			  	<i class="glyphicon glyphicon-ok" id="${ product.prodNo }"></i>
-				<input type="hidden" value="${ product.prodNo }">			  
+			  <td align="left"  >
+			  	<i class="glyphicon glyphicon-ok" id="${ product.prodName }"></i>
+				<input type="hidden" name="prodName" value="${ product.prodName }">		  
 				<input type="hidden" name="prodNo" value="${ product.prodNo }">
-				<input type="hidden" name="proTranCode" value="${ product.proTranCode }">			  
+				<input type="hidden" name="proTranCode" value="${ product.proTranCode }">
 			  </td>
 			  
 			</tr>
