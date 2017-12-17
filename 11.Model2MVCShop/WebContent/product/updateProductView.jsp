@@ -88,7 +88,9 @@ $( function(){
 //=================== "상품제조일자" Event 연결 ===================
 $(function() {
 	$("#manuDate").datepicker({
-		dateFormat: "yymmdd"
+		dateFormat: "yymmdd",
+		changeMonth: true,
+		changeYear: true 
 	});
 });
 

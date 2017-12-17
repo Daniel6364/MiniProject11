@@ -157,8 +157,8 @@ public class ProductController {
 		System.out.println("/product/addProduct : POST");
 
 		// SpringFramework FileUpload
-		String temDir = "C:\\Users\\bitcamp\\git\\MiniProject11\\11.Model2MVCShop\\WebContent\\images\\uploadFiles";
-//		String temDir = "C:\\Users\\iamsung33\\git\\MiniProject09\\09.Model2MVCShop(jQuery)\\WebContent\\images\\uploadFiles";
+//		String temDir = "C:\\Users\\bitcamp\\git\\MiniProject11\\11.Model2MVCShop\\WebContent\\images\\uploadFiles";
+		String temDir = "C:\\Users\\iamsung33\\git\\MiniProject11\\11.Model2MVCShop\\WebContent\\images\\uploadFiles";
 			
 		multipartFile = mRequest.getFile("fileNames");
 
@@ -259,8 +259,8 @@ public class ProductController {
 		System.out.println("/product/updateProduct : POST");
 
 		// SpringFramework FileUpload
-		String temDir = "C:\\Users\\bitcamp\\git\\MiniProject11\\11.Model2MVCShop\\WebContent\\images\\uploadFiles";
-//		String temDir = "C:\\Users\\iamsung33\\git\\MiniProject09\\09.Model2MVCShop(jQuery)\\WebContent\\images\\uploadFiles";
+//		String temDir = "C:\\Users\\bitcamp\\git\\MiniProject11\\11.Model2MVCShop\\WebContent\\images\\uploadFiles";
+		String temDir = "C:\\Users\\iamsung33\\git\\MiniProject11\\11.Model2MVCShop\\WebContent\\images\\uploadFiles";
 			
 		multipartFile = mRequest.getFile("fileNames");
 

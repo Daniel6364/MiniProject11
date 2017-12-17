@@ -52,7 +52,11 @@
 	
 	//=================== "상품제조일자" Event 연결 ===================
 	$(function() {
-		$("#manuDate").datepicker();
+		$("#manuDate").datepicker({
+			dateFormat: "yymmdd",
+			changeMonth: true,
+			changeYear: true 
+		});
 	});
 
 	function fncAddProduct() {
