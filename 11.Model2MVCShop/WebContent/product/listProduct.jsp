@@ -12,7 +12,7 @@
 
 <title>listProduct.jsp</title>
 
-<!-- 참조 : http://getbootstrap.com/css/   참조 -->
+	<!-- 참조 : http://getbootstrap.com/css/   참조 -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
 	<!--  ///////////////////////// Bootstrap, jQuery CDN ////////////////////////// -->
@@ -169,10 +169,10 @@ $(function(){
 
 $(function(){
 	
-	$( "tbody td:nth-child(3)" ).bind("dblclick" , function() {
+	$( "td:nth-child(3)" ).bind("dblclick" , function() {
 		
 		var proTranCode = $( $('input[name="proTranCode"]')[$( "tbody td:nth-child(3)" ).index(this)] ).val();
-		var prodNo = $( $('input[name="prodNo"]')[$( "tbody td:nth-child(3)" ).index(this)] ).val();
+		var prodNo = $( $('td:nth-child(6) input[name="prodNo"]')[$( "td:nth-child(3)" ).index(this)] ).val();
 		
 		if ( "${user.userId}" != 'admin' && "${user.userId}" != 'manager' ) { 
 			if (proTranCode == '' || proTranCode == null) {
@@ -310,7 +310,7 @@ $(function(){
 				</c:if>
 			  </td>
 			  
-		  	  <td align="left" title="Click : 상품정보 확인">
+		  	  <td align="left" title="더블클릭 : 상품정보 확인">
 					${ product.prodName }
 		  	  </td>
 		  	  

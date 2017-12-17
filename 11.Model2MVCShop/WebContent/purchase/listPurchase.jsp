@@ -6,10 +6,23 @@
 <meta charset="EUC-KR">
 <title>listPurchase.jsp</title>
 
-<link rel="stylesheet" href="/css/admin.css" type="text/css">
+	<!-- 참조 : http://getbootstrap.com/css/   참조 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<!--  ///////////////////////// Bootstrap, jQuery CDN ////////////////////////// -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
 
-<!-- CDN(Content Delivery Network) 호스트 사용 -->
-<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<!--  ///////////////////////// CSS ////////////////////////// -->
+	<style>
+	  body {
+            padding-top : 50px;
+        }
+    </style>
+
+<!--  ///////////////////////// JavaScript ////////////////////////// -->
 <script type="text/javascript">
 
 //검색 / page 두가지 경우 모두 Form 전송을 위해 JavaScrpt 이용  
@@ -20,24 +33,24 @@ function fncGetList(currentPage) {
 
 
 $( function(){
-	$('.ct_list_pop td:nth-child(1)').bind("click", function(){
-		var tranNo = $( $('input[name="tranNo"]')[$('.ct_list_pop td:nth-child(1)').index(this)] ).val(); 
+	$('td:nth-child(1)').bind("click", function(){
+		var tranNo = $( $('td:nth-child(1) input[name="tranNo"]')[$('td:nth-child(1)').index(this)] ).val(); 
 		self.location = "/purchase/getPurchase?tranNo=" + tranNo
 	});
 });
 
 
 $( function(){
-	$('.ct_list_pop td:nth-child(3)').bind("click", function(){
-		var buyerUserId = $( $('input[name="buyerUserId"]')[$('.ct_list_pop td:nth-child(3)').index(this)] ).val(); 
+	$('td:nth-child(2)').bind("click", function(){
+		var buyerUserId = $( $('td:nth-child(2) input[name="buyerUserId"]')[$('td:nth-child(2)').index(this)] ).val(); 
 		self.location = "/user/getUser?userId=" + buyerUserId
 	});
 });
 
 
 $( function(){
-	$('.ct_list_pop td:contains("물건도착")').bind("click", function(){
-		var tranNo = $( $('input[name="tranNo"]')[$('.ct_list_pop td:nth-child(11)').index(this)] ).val(); 
+	$('td:nth-child(6)').bind("click", function(){
+		var tranNo = $( $('td:nth-child(6) input[name="tranNo"]')[$('td:nth-child(6)').index(this)] ).val(); 
 	//	self.location = "/purchase/updateTranCode?tranNo=" + tranNo + "&tranCode=2"
 	
 	$.ajax({
@@ -58,100 +71,105 @@ $( function(){
 </script>
 </head>
 
-<body bgcolor="#ffffff" text="#000000">
+<body>
+	<!-- ToolBar Start /////////////////////////////////////-->
+	<jsp:include page="/layout/toolbar.jsp" />
+   	<!-- ToolBar End /////////////////////////////////////-->
+	
+	<!--  화면구성 div Start /////////////////////////////////////-->
+	<div class="container">
+	
+		<div class="page-header text-info">
+	       <h3>구매목록조회</h3>
+	    </div>
 
-<div style="width: 98%; margin-left: 10px;">
+	<!-- table 위쪽 검색 Start /////////////////////////////////////-->
+	    <div class="row">
+	    
+		    <div class="col-md-6 text-left">
+		    	<p class="text-primary">
+		    		전체  ${resultPage.totalCount } 건수, 현재 ${resultPage.currentPage} 페이지
+		    	</p>
+		    </div>
 
-<form name="detailForm">
-
-<table width="100%" height="37" border="0" cellpadding="0"	cellspacing="0">
-	<tr>
-		<td width="15" height="37"><img src="/images/ct_ttl_img01.gif"width="15" height="37"></td>
-		<td background="/images/ct_ttl_img02.gif" width="100%" style="padding-left: 10px;">
-			<table width="100%" border="0" cellspacing="0" cellpadding="0">
-				<tr>
-					<td width="93%" class="ct_ttl01">구매 목록조회</td>
-				</tr>
-			</table>
-		</td>
-		<td width="12" height="37"><img src="/images/ct_ttl_img03.gif"	width="12" height="37"></td>
-	</tr>
-</table>
-
-<table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 10px;">
-	<tr>
-		<td colspan="11" >
-			전체  ${ resultPage.totalCount } 건수, 현재 ${ resultPage.currentPage } 페이지
-		</td>
-	</tr>
-	<tr>
-		<td class="ct_list_b" width="80">No</td>
-		<td class="ct_line02"></td>
-		<td class="ct_list_b" width="120">구매회원ID</td>
-		<td class="ct_line02"></td>
-		<td class="ct_list_b" width="120">받는이</td>
-		<td class="ct_line02"></td>
-		<td class="ct_list_b">받는이 전화번호</td>
-		<td class="ct_line02"></td>
-		<td class="ct_list_b">배송현황</td>
-		<td class="ct_line02"></td>
-		<td class="ct_list_b">정보수정</td>
-	</tr>
-	<tr>
-		<td colspan="11" bgcolor="808285" height="1"></td>
-	</tr>
-	<c:set var="i" value="0" />
-	<c:forEach var="purchase" items="${ list }">
-		<c:set var="i" value="${ i + 1 }" />
-	<tr class="ct_list_pop">
-		<td align="center">
-			<input type="hidden" name="tranNo" value="${ purchase.tranNo }">${ i }
-		</td>
-		<td></td>
-		<td align="center">
-			<input type="hidden" name="buyerUserId" value="${ purchase.buyer.userId }">${ purchase.buyer.userId }
-		</td>
-		<td></td>
-		<td align="center">${ purchase.receiverName }</td>
-		<td></td>
-		<td align="center">${ purchase.receiverPhone }</td>
-		<td></td>
-		<td align="center"> 현재
-			<c:if test="${ purchase.tranCode == '0' }">
-				구매완료
-			</c:if>
-			<c:if test="${ purchase.tranCode == '1' }">
-				배송중
-			</c:if>
-			<c:if test="${ purchase.tranCode == '2' }">
-				배송완료
-			</c:if> 상태 입니다.
-		</td>
-		<td></td>
-		<td align="center">
-			<c:if test="${ purchase.tranCode == '1' }">
-				<input type="hidden" name="tranNo" value="${ purchase.tranNo }">물건도착
-			</c:if>
-		</td>
-	</tr>
-	</c:forEach>
-</table>
-
-<table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 10px;">
-	<tr>
-		<td align="center">
-			<input type="hidden" id="currentPage" name="currentPage" value=""/>
+			<div class="col-md-6 text-right">
+			    <form class="form-inline" name="detailForm">
+			    
+				  <!-- PageNavigation 선택 페이지 값을 보내는 부분 -->
+				  <input type="hidden" id="currentPage" name="currentPage" value=""/>
+				  
+				</form>
+	    	</div>
+    	</div>
+    	
+    	<!-- table 위쪽 검색 Start /////////////////////////////////////-->
 		
-			<jsp:include page="../common/pageNavigator.jsp"/>
 		
-		</td>
-	</tr>
-</table>
-
-<!--  페이지 Navigator 끝 -->
-</form>
-
-</div>
-
+      <!--  table Start /////////////////////////////////////-->
+      <table class="table table-hover table-striped" >
+      
+        <thead>
+          <tr>
+            <th align="center">No</th>
+            <th align="left">구매회원ID</th>
+            <th align="left">받으실분 이름</th>
+            <th align="left">받으실분 전화번호</th>
+            <th align="left">배송현황</th>
+            <th align="left">정보수정</th>
+          </tr>
+        </thead>
+       
+		<tbody>
+		
+		  <c:set var="i" value="0" />
+		  <c:forEach var="purchase" items="${list}">
+			<c:set var="i" value="${ i+1 }" />
+			<tr>
+			  <td align="center">
+			  	<input type="hidden" name="tranNo" value="${ purchase.tranNo }">${ i }
+		  	  </td>
+			  
+			  <td align="left">
+				<input type="hidden" name="buyerUserId" value="${ purchase.buyer.userId }">${ purchase.buyer.userId }
+	          </td>
+			  
+			  <td align="left">${ purchase.receiverName }</td>
+			  
+			  <td align="left">${ purchase.receiverPhone }</td>
+			  
+			  <td align="left">현재
+				<c:if test="${ purchase.tranCode == '0' }">
+					구매완료
+				</c:if>
+				<c:if test="${ purchase.tranCode == '1' }">
+					배송중
+				</c:if>
+				<c:if test="${ purchase.tranCode == '2' }">
+					배송완료
+				</c:if> 상태 입니다.
+			  </td>
+			  
+			  <td align="left">
+			  	<c:if test="${ purchase.tranCode == '1' }">
+					<input type="hidden" name="tranNo" value="${ purchase.tranNo }">물건도착
+				</c:if>
+			  </td>
+			</tr>
+          </c:forEach>
+        
+        </tbody>
+      
+      </table>
+	  <!--  table End /////////////////////////////////////-->
+	  
+ 	</div>
+ 	<!--  화면구성 div End /////////////////////////////////////-->
+ 	
+ 	
+ 	<!-- PageNavigation Start... -->
+		<jsp:include page="../common/pageNavigator_new.jsp"/>
+	<!-- PageNavigation End... -->
+					
 </body>
+ 
 </html>

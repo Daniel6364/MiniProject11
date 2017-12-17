@@ -57,7 +57,7 @@ public class Purchase {
 		return paymentOption;
 	}
 	public void setPaymentOption(String paymentOption) {
-		this.paymentOption = paymentOption;
+		this.paymentOption = paymentOption.trim();
 	}
 	public Product getPurchaseProd() {
 		return purchaseProd;

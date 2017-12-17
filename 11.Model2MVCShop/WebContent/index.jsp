@@ -27,12 +27,14 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
-	
+	<!-- 
+		background-image: url(http://www.stylexstyle.com/sites/default/files/IMG_3063_0.jpg);
+-->
 	<!--  ///////////////////////// CSS ////////////////////////// -->
 	<style>
 	
 	body {
-		background-image: url(http://www.stylexstyle.com/sites/default/files/IMG_3063_0.jpg);
+		background-image: url(images\\cropped-1920-1080-819582.jpg);
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
@@ -41,7 +43,7 @@
 		margin-top: 100px;
 		}
 	.jumbotron {
-	 	background-color: rgba( 240, 230, 140, 0.6 );
+	 	background-color: rgba( 160, 220, 220, 0.6 );
         }
     .jumbotron p {
      	font-weight: bold;
@@ -114,12 +116,11 @@
 		<!--  Main start /////////////////////////////////////-->   		
 	 	 	<div class="col-md-9">
 				<div class="jumbotron">
-			  		<h1>Model2 MVC Shop</h1>
-			  		<p>로그인 후 사용가능...</p>
-			  		<p>로그인 전 검색만 가능합니다.</p>
-			  		<p>회원가입 하세요.</p>
-			  		
-			  		<div class="text-center">
+		  			<h1>Model2 MVC Shop</h1>
+		  			<p>로그인 후 사용가능...</p>
+		  			<p>로그인 전 검색만 가능합니다.</p>
+		  			<p>회원가입 하세요.</p>
+				<div class="text-center">
 			  			<a class="btn btn-info btn-lg" href="#" role="button">회원가입</a>
 			  			<a class="btn btn-info btn-lg" href="#" role="button">로 그 인</a>
 			  		</div>

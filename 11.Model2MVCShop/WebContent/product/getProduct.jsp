@@ -20,12 +20,6 @@
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
 	
-	<!-- Bootstrap Dropdown Hover CSS -->
-   <link href="/css/animate.min.css" rel="stylesheet">
-   <link href="/css/bootstrap-dropdownhover.min.css" rel="stylesheet">
-   
-    <!-- Bootstrap Dropdown Hover JS -->
-   <script src="/javascript/bootstrap-dropdownhover.min.js"></script>
 	
 	<!--  ///////////////////////// CSS ////////////////////////// -->
 	<style>
@@ -45,8 +39,8 @@ $(function(){
 });
 
 $(function(){
-	$("button:contains('이전')").bind("click", function(){
-		history.go(-1);
+	$("a[href='#']").bind("click", function(){
+		window.history.back();
 	});
 });
 
@@ -129,9 +123,9 @@ $(function(){
 	  			<button type="button" class="btn btn-primary">
 	  				구매
 	  			</button>
-	  			<button type="button" class="btn btn-primary">
-	  				이전
-	  			</button>
+	  			<a class="btn btn-primary btn" href="#" role="button">
+	  				이&nbsp;전
+	  			</a>
 	  		</div>
 		</div>
 		
