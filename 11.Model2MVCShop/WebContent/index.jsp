@@ -43,13 +43,16 @@
 		margin-top: 100px;
 		}
 	.jumbotron {
-	 	background-color: rgba( 160, 220, 220, 0.6 );
+			color: navy;
+			background-color: rgba( 160, 220, 220, 0.7 );
         }
     .jumbotron p {
      	font-weight: bold;
      	font-style: italic;
      }   
-        
+     .jumbotron h1 {
+     	font-stretch: wider;
+     }   
 	
 	</style>
    	

@@ -11,7 +11,7 @@
 
 <title>updateProductView.jsp</title>
 
-<!-- 참조 : http://getbootstrap.com/css/   참조 -->
+	<!-- 참조 : http://getbootstrap.com/css/   참조 -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
 	<!--  ///////////////////////// Bootstrap, jQuery CDN ////////////////////////// -->

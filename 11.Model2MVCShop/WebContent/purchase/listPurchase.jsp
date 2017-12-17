@@ -50,10 +50,9 @@ $( function(){
 
 $( function(){
 	$('td:nth-child(6)').bind("click", function(){
-		var tranNo = $( $('td:nth-child(6) input[name="tranNo"]')[$('td:nth-child(6)').index(this)] ).val(); 
-	//	self.location = "/purchase/updateTranCode?tranNo=" + tranNo + "&tranCode=2"
+		var tranNo = $( $('input[name="tranNo"]')[$('td:nth-child(6)').index(this)] ).val(); 
 	
-	$.ajax({
+		$.ajax({
 						url : "/purchase/json/updateTranCode/" + tranNo + "/2",
 						method : "GET",
 						dataType : "json",
@@ -68,6 +67,7 @@ $( function(){
 					}); // end of $.ajax
 				});
 	});
+	
 </script>
 </head>
 
