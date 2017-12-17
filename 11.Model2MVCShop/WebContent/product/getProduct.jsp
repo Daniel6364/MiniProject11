@@ -32,15 +32,15 @@
 	<script type="text/javascript">
 
 $(function(){
-	$("button:contains('구매')").bind("click", function(){
+	$("button:contains('구 매')").bind("click", function(){
 		self.location = "/purchase/addPurchase?prod_no=${ product.prodNo }"
 			$("form").attr("method", "POST")	
 	});
 });
 
 $(function(){
-	$("a[href='#']").bind("click", function(){
-		window.history.back();
+	$("a[href='#']:contains('이 전')").bind("click", function(){
+		self.location = "/product/listProduct?menu=search"
 	});
 });
 
@@ -121,10 +121,10 @@ $(function(){
 		<div class="row">
 	  		<div class="col-md-12 text-center ">
 	  			<button type="button" class="btn btn-primary">
-	  				구매
+	  				구 매
 	  			</button>
 	  			<a class="btn btn-primary btn" href="#" role="button">
-	  				이&nbsp;전
+	  				이 전
 	  			</a>
 	  		</div>
 		</div>

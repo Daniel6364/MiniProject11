@@ -46,7 +46,7 @@
 	//=================== "취소" Event 연결 =================== 
 	$(function() {
 		$("a[href='#' ]").bind("click", function() {
-			$($("form")[0]).reset();
+			$("form")[0].reset();
 		});
 	});
 	

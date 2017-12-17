@@ -20,13 +20,6 @@
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
 	
-	<!-- Bootstrap Dropdown Hover CSS -->
-   <link href="/css/animate.min.css" rel="stylesheet">
-   <link href="/css/bootstrap-dropdownhover.min.css" rel="stylesheet">
-   
-    <!-- Bootstrap Dropdown Hover JS -->
-   <script src="/javascript/bootstrap-dropdownhover.min.js"></script>
-   
    <!-- 상품제조일자 Calendar Event -->
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="/resources/demos/style.css">
@@ -81,7 +74,8 @@ $( function(){
 
 $( function(){
 	$( "a[href='#' ]" ).bind("click", function(){
-		history.go(-1);
+		//history.go(-1);
+		self.location = "/product/listProduct?menu=manage"
 	});
 });
 
@@ -93,8 +87,6 @@ $(function() {
 		changeYear: true 
 	});
 });
-
-
 
 	</script>
 </head>

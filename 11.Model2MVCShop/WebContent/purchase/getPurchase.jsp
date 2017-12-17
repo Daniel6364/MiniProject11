@@ -35,7 +35,8 @@
 	
 	$(function(){
 		$('a[href="#"]').bind("click", function(){
-			history.go(-2);
+			//history.go(-1);
+			self.location = "/purchase/listPurchase"
 		});
 	});
 	

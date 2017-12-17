@@ -47,7 +47,8 @@ $( function(){
 
 $( function(){
 	$('div a[href="#"]').bind("click", function(){
-		history.go(-1);
+		//history.go(-1);
+		self.location = "/product/getProduct?prodNo=${ product.prodNo }&menu=search"
 	});
 });
 

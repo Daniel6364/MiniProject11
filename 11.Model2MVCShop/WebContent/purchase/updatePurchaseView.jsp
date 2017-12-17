@@ -9,12 +9,29 @@
 
 <title>updatePurchaseView.jsp</title>
 
-<link rel="stylesheet" href="/css/admin.css" type="text/css">
+<!-- 참조 : http://getbootstrap.com/css/   참조 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<!--  ///////////////////////// Bootstrap, jQuery CDN ////////////////////////// -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+	
+	<!-- 상품제조일자 Calendar Event -->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/resources/demos/style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	
+	<!--  ///////////////////////// CSS ////////////////////////// -->
+	<style>
+ 		body {
+            padding-top : 50px;
+        }
+    </style>
 
-<script type="text/javascript" src="../javascript/calendar.js"></script>
-
-<!-- CDN(Content Delivery Network) 호스트 사용 -->
-<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<!--  ///////////////////////// JavaScript ////////////////////////// -->
 <script type="text/javascript">
 
 function fncUpdatePurchase() {
@@ -55,6 +72,88 @@ $(function(){
 
 </head>
 
+<body>
+
+	<!-- ToolBar Start /////////////////////////////////////-->
+	<jsp:include page="/layout/toolbar.jsp" />
+   	<!-- ToolBar End /////////////////////////////////////-->
+	
+	<!--  화면구성 div Start /////////////////////////////////////-->
+	<div class="container">
+	
+		<div class="page-header text-center">
+	       <h3 class=" text-info">구매정보수정</h3>
+	       <!-- 
+	       	<h5 class="text-muted">상품 정보를 <strong class="text-danger">최신정보로 관리</strong>해 주세요.</h5>
+	       -->
+	    </div>
+	    
+	    <!-- form Start /////////////////////////////////////-->
+		<form class="form-horizontal">
+		
+		  <div class="form-group">
+		    <label for="buyerId" class="col-sm-offset-1 col-sm-3 control-label">구매자아이디</label>
+		    <div class="col-sm-4">
+		      <input type="text" class="form-control" id="buyerId" name="buyerId" value="${ user.userId }" readonly>
+		       <span id="helpBlock" class="help-block">
+		      	<strong class="text-danger">구매자 아이디는 수정불가</strong>
+		      </span>
+		    </div>
+		  </div>
+		
+		  <div class="form-group">
+		    <label for="paymentOption" class="col-sm-offset-1 col-sm-3 control-label">구매방법</label>
+		    <div class="col-sm-4">
+		    	<select class="form-control" name="paymentOption">
+					<option value="1" ${ purchase.paymentOption == '1' ? 'selected' : '' }>현금구매</option>
+					<option value="2" ${ purchase.paymentOption == '2' ? 'selected' : '' }>신용구매</option>
+				</select>
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="receiverName" class="col-sm-offset-1 col-sm-3 control-label">받으실분 이름</label>
+		    <div class="col-sm-4">
+		      <input type="text" class="form-control" id="receiverName" name="receiverName" value="${ purchase.receiverName }" >
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="receiverPhone" class="col-sm-offset-1 col-sm-3 control-label">받으실분 연락처</label>
+		    <div class="col-sm-4">
+		      <input type="text" class="form-control" id="receiverPhone" name="receiverPhone" value="${ purchase.receiverPhone }">
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="dlvyAddr" class="col-sm-offset-1 col-sm-3 control-label">받으실분 주소</label>
+		    <div class="col-sm-4">
+		      <input type="text" class="form-control" id="dlvyAddr" name="dlvyAddr" value="${ purchase.dlvyAddr }">
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="fileNames" class="col-sm-offset-1 col-sm-3 control-label">상품이미지</label>
+		    <div class="col-sm-4">
+		      <input type="file" class="form-control" id="fileNames" name="fileNames" value="${ product.fileNames }" placeholder="상품이미지">
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <div class="col-sm-offset-4  col-sm-4 text-center">
+		      <button type="button" class="btn btn-primary"  >수 &nbsp;정</button>
+			  <a class="btn btn-primary btn" href="#" role="button">취 &nbsp;소</a>
+		    </div>
+		  </div>
+		</form>
+		<!-- form Start /////////////////////////////////////-->
+	    
+ 	</div>
+	<!--  화면구성 div Start /////////////////////////////////////-->
+ 	
+</body>
+
+<!-- 이전자료 -->
 <body bgcolor="#ffffff" text="#000000">
 
 <!-- <form name="updatePurchase" method="post" action="/purchase/updatePurchase?tranNo=${ purchase.tranNo }"> -->
