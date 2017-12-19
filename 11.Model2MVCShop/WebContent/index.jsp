@@ -40,7 +40,7 @@
 		background-position: center;
 		 }
 	.row { 
-		margin-top: 100px;
+		margin: 100px;
 		}
 	.jumbotron {
 			color: navy;

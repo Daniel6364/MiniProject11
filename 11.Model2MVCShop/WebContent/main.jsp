@@ -32,6 +32,28 @@
             padding-top : 70px;
         }
         
+        .jumbotron {
+        	background-color: rgba(192,192,192,0.3);
+        }
+        
+        .jumbotron h1 {
+        	text-align: center;
+        	text-transform: uppercase;
+        	line-height: 0.5;
+        	color: navy;
+        }
+        
+        .jumbotron p {
+        	text-indent: 30px;
+    		text-align: justify;
+  			letter-spacing: 5px;
+  			color: red;
+        }
+        
+        .item h1, h4 {
+        	color: lime;
+        }
+        
    	</style>
    	
      <!--  ///////////////////////// JavaScript ////////////////////////// -->
@@ -50,8 +72,8 @@
    	
    	<!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Model2 MVC Shop</h1>
-        <p>J2SE , DBMS ,JDBC , Servlet & JSP, Java Framework , HTML5 , UI Framework 학습 후 Mini-Project 진행</p>
+        <h1>Welcom to <hr/>Model2 MVC Shop</h1>
+        <p>J2SE, RDBMS, JDBC, Servlet & JSP, Java Framework, HTML5, UI Framework 학습 후 Mini-Project 진행</p>
       </div>
 
 
@@ -71,7 +93,7 @@
 					<img src="/images/chicago01.jpg" alt="chicago01" style="width: 100%;">
 					<div class="carousel-caption">
 						<h1>Beautiful Chicago Sunset</h1>
-						<p>This sunset would be the best one among what you see ever.</p>
+						<h4>This sunset would be the best one among what you see ever.</h4>
 					</div>
 				</div>
 
@@ -79,15 +101,15 @@
 					<img src="/images/chicago02.jpg" alt="chicago02" style="width: 100%;">
 					<div class="carousel-caption">
 						<h1>Amazing Architectures</h1>
-						<p>You can enjoy the wonderful architecture forest.</p>
+						<h4>You can enjoy the wonderful architecture forest.</h4>
 					</div>
 				</div>
 
 				<div class="item">
 					<img src="/images/chicago03.jpg" alt="chicago03" style="width: 100%;">
 					<div class="carousel-caption">
-						<h1>Cloud Bean is one of the best landmark in Chicago</h1>
-						<p>This statue of bean is so shine in middle of the park.</p>
+						<h1>Fantastic Cloud Bean</h1>
+						<h4>This statue of bean is so shine in middle of the park.</h4>
 					</div>
 				</div>
 			</div>

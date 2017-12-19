@@ -34,7 +34,6 @@
   <!-- jQuery UI toolTip »ç¿ë JS-->
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   
-<!-- <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script> -->
 	
 	<!--  ///////////////////////// CSS ////////////////////////// -->
 	<style>
@@ -208,6 +207,38 @@ $(function(){
 					}); // end of $.ajax
 				});
 	});
+	
+/*	
+$( function() {
+
+    $( "#searchKeyword" ).autocomplete({
+      source : function(request, response){
+    	  
+    	  $.ajax ({
+    			method : "POST",
+    			dataType : "json",
+    			headers : {
+					"Accept" : "application/json",
+					"Content-Type" : "application/json"
+				},
+				success : function(JSONData, status) {
+					response( $.map( data, function( item ) {
+				        return {
+				            label: item.name,
+				            value: item.value,
+				        }
+				}));
+				},
+    	  })
+      },
+      minLength : 1
+    });
+  });
+*/
+
+	
+
+	
 	
 	</script>
 </head>
