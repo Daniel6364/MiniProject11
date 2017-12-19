@@ -27,9 +27,13 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
-	<!-- 
-		background-image: url(http://www.stylexstyle.com/sites/default/files/IMG_3063_0.jpg);
--->
+	
+	<!-- Facebook Login -->
+	<!-- HTTPS required. HTTP will give a 403 forbidden response -->
+	<script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
+	<script src="https://sdk.accountkit.com/ko_KR/sdk.js"></script>
+
+	
 	<!--  ///////////////////////// CSS ////////////////////////// -->
 	<style>
 	
@@ -75,11 +79,51 @@
 			});
 		});
 		
+		//============= FaceBook 로그인 =============
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId : '1663788730309184',
+				cookie : true,
+				xfbml : true,
+				version : 'v1.8'
+			});
+
+			FB.AppEvents.logPageView();
+
+		};
+
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {
+				return;
+			}
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "https://connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		
+		FB.getLoginStatus(function(response) {
+			statusChangeCallback(response);
+		});
+		
+
+		function checkLoginState() {
+		  FB.getLoginStatus(function(response) {
+		    statusChangeCallback(response);
+		  });
+		}
+		//============= FaceBook 로그인 =============
 	</script>	
 	
 </head>
 
 <body>
+
+
+    
+
+
 
 	<!-- ToolBar Start /////////////////////////////////////-->
 	<div class="navbar  navbar-default">
@@ -103,6 +147,12 @@
 	             <ul class="nav navbar-nav navbar-right">
 	                 <li><a href="#">회원가입</a></li>
 	                 <li><a href="#">로 그 인</a></li>
+					 <li><a href="#">
+					 		<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+								Facebook Login						
+							</fb:login-button>
+						 </a>
+					 </li>
 	           	</ul>
 	       </div>
    		
