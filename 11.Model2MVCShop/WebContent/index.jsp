@@ -80,16 +80,14 @@
 		});
 		
 		//============= FaceBook 로그인 =============
+		
 		window.fbAsyncInit = function() {
 			FB.init({
 				appId : '1663788730309184',
-				cookie : true,
 				xfbml : true,
-				version : 'v1.8'
+				version : 'v2.11'
 			});
-
 			FB.AppEvents.logPageView();
-
 		};
 
 		(function(d, s, id) {
@@ -99,21 +97,27 @@
 			}
 			js = d.createElement(s);
 			js.id = id;
-			js.src = "https://connect.facebook.net/en_US/sdk.js";
+			js.src = "https://connect.facebook.net/ko_KR/sdk.js";
+//			js.src = "https://connect.facebook.net/en_US/sdk.js";
+//			js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.11&appId=1663788730309184';
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
-		
+
 		FB.getLoginStatus(function(response) {
 			statusChangeCallback(response);
 		});
-		
 
 		function checkLoginState() {
-		  FB.getLoginStatus(function(response) {
-		    statusChangeCallback(response);
-		  });
+			FB.getLoginStatus(function(response) {
+				statusChangeCallback(response);
+			});
 		}
+		
+		FB.login(function(response) {
+			  // handle the response
+			}, {scope: 'public_profile,email'});
 		//============= FaceBook 로그인 =============
+	
 	</script>	
 	
 </head>
@@ -236,6 +240,11 @@
 				
 			</div>
 			<!--  Menu 구성 end /////////////////////////////////////-->   
+			<div class="fb-like" 
+				 data-share="true" 
+				 data-width="450" 
+				 data-show-faces="true">
+			</div>
 
 		</div>
 		<!-- 다단레이아웃  end /////////////////////////////////////-->
