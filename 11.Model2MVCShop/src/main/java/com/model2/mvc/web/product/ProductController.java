@@ -46,7 +46,7 @@ public class ProductController {
 	@Qualifier("productServiceImpl")
 	private ProductService productService;
 	
-	//setter Method 구현 않음
+	//setter Method 구현 않음 
 		
 	public ProductController(){
 		System.out.println(this.getClass());
